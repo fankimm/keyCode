@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  assetPrefix: "https://github.com/fankimm/keyCode/blob/main/out",
+  assetPrefix: "https://github.com/fankimm/keyCode",
 };
 
 module.exports = nextConfig;
