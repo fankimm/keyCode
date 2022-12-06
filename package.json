@@ -2,7 +2,6 @@
   "name": "key-codes",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://fankimm.github.io/keyCode",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
