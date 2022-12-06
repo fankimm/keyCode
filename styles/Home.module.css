@@ -1,15 +1,128 @@
+.logo {
+  cursor: pointer;
+}
 .mainContainer {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  width: 600px;
+  margin: auto;
+  color: #595959;
+  /* scrollbar-width: none;
+  -ms-overflow-style: none; */
+}
+/* .maincontainer::-webkit-scrollbar {
+  display: none;
+} */
+.footerContainer {
+  background-color: rgba(255, 255, 255, 1);
+  position: fixed;
+  width: 600px;
+  bottom: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  justify-content: space-evenly;
+  display: flex;
+  margin: auto;
+}
+@media (max-width: 720px) {
+  .footerCopy {
+    margin-bottom: 10px;
+  }
+  .mainContainer {
+    width: 80vw;
+    flex-wrap: wrap;
+    /* height: auto; */
+    padding: 20px;
+  }
+  .footerContainer {
+    font-size: 10px;
+    left: calc(calc(100vw - 80vw) / 2);
+    width: 80vw;
+    flex-wrap: wrap;
+    /* padding: 20px; */
+  }
+  .buttonContainer {
+    align-items: center;
+    height: 200px;
+  }
+}
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
-.buttonContainer {
-  width: 500px;
-  display: flex;
-  justify-content: space-around;
+.bodyContainer {
+  justify-content: center;
 }
-.buttonWrapper {
-  width: 70px;
+.tableButton {
+  padding: 5px;
+  border-radius: 12px;
+  background-color: #4096ff;
+  color: white;
+  border: none;
+  transition: all 0.2s;
+}
+.tableButton:hover {
+  cursor: pointer;
+  background-color: #69b1ff;
+}
+.input {
+  width: 100%;
+  border: none;
   padding: 10px;
-  border: 1px solid;
+  margin-bottom: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: all 0.2s;
+  border-radius: 12px;
+}
+.input:focus {
+  outline: #69b1ff solid;
+}
+.buttonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.buttonWrapper {
+  width: 90px;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.buttonWrapper2 {
+  width: 100px;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: all 0.4s;
+}
+.buttonWrapper2:hover {
+  background-color: #4096ff;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.a {
+  color: #4096ff;
+  text-decoration: none;
+}
+.a:hover {
+  color: #4096ff;
+  text-decoration: underline;
+}
+.table {
+  width: 100%;
+}
+.td {
+  margin-bottom: 50px;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }

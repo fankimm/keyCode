@@ -1,0 +1,182 @@
+[
+  {
+    "keyCode": "0",
+    "keyDescrpition": "Unidentified key"
+  },
+  { "keyCode": "8", "keyDescrpition": "Backspace" },
+  { "keyCode": "9", "keyDescrpition": "Tab" },
+  { "keyCode": "12", "keyDescrpition": "Clear" },
+  { "keyCode": "13", "keyDescrpition": "Enter" },
+  { "keyCode": "16", "keyDescrpition": "Shift" },
+  { "keyCode": "17", "keyDescrpition": "Control" },
+  { "keyCode": "18", "keyDescrpition": "Alt" },
+  { "keyCode": "19", "keyDescrpition": "Pause/Break" },
+  { "keyCode": "20", "keyDescrpition": "Caps Lock" },
+  { "keyCode": "27", "keyDescrpition": "Escape" },
+  { "keyCode": "32", "keyDescrpition": "Space Bar" },
+  { "keyCode": "33", "keyDescrpition": "Page Up" },
+  { "keyCode": "34", "keyDescrpition": "Page Down" },
+  { "keyCode": "35", "keyDescrpition": "End" },
+  { "keyCode": "36", "keyDescrpition": "Home" },
+  { "keyCode": "37", "keyDescrpition": "Left Arrow" },
+  { "keyCode": "38", "keyDescrpition": "Up Arrow" },
+  { "keyCode": "39", "keyDescrpition": "Right Arrow" },
+  { "keyCode": "40", "keyDescrpition": "Down Arrow" },
+  { "keyCode": "41", "keyDescrpition": "Select" },
+  { "keyCode": "42", "keyDescrpition": "Print" },
+  { "keyCode": "43", "keyDescrpition": "Execute" },
+  {
+    "keyCode": "44",
+    "keyDescrpition": "Print Screen / Snapshot"
+  },
+  { "keyCode": "45", "keyDescrpition": "Insert" },
+  { "keyCode": "46", "keyDescrpition": "Delete" },
+  { "keyCode": "47", "keyDescrpition": "Help" },
+  { "keyCode": "48", "keyDescrpition": "0" },
+  { "keyCode": "49", "keyDescrpition": "1" },
+  { "keyCode": "50", "keyDescrpition": "2" },
+  { "keyCode": "51", "keyDescrpition": "3" },
+  { "keyCode": "52", "keyDescrpition": "4" },
+  { "keyCode": "53", "keyDescrpition": "5" },
+  { "keyCode": "54", "keyDescrpition": "6" },
+  { "keyCode": "55", "keyDescrpition": "7" },
+  { "keyCode": "56", "keyDescrpition": "8" },
+  { "keyCode": "57", "keyDescrpition": "9" },
+  { "keyCode": "65", "keyDescrpition": "A" },
+  { "keyCode": "66", "keyDescrpition": "B" },
+  { "keyCode": "67", "keyDescrpition": "C" },
+  { "keyCode": "68", "keyDescrpition": "D" },
+  { "keyCode": "69", "keyDescrpition": "E" },
+  { "keyCode": "70", "keyDescrpition": "F" },
+  { "keyCode": "71", "keyDescrpition": "G" },
+  { "keyCode": "72", "keyDescrpition": "H" },
+  { "keyCode": "73", "keyDescrpition": "I" },
+  { "keyCode": "74", "keyDescrpition": "J" },
+  { "keyCode": "75", "keyDescrpition": "K" },
+  { "keyCode": "76", "keyDescrpition": "L" },
+  { "keyCode": "77", "keyDescrpition": "M" },
+  { "keyCode": "78", "keyDescrpition": "N" },
+  { "keyCode": "79", "keyDescrpition": "O" },
+  { "keyCode": "80", "keyDescrpition": "P" },
+  { "keyCode": "81", "keyDescrpition": "Q" },
+  { "keyCode": "82", "keyDescrpition": "R" },
+  { "keyCode": "83", "keyDescrpition": "S" },
+  { "keyCode": "84", "keyDescrpition": "T" },
+  { "keyCode": "85", "keyDescrpition": "U" },
+  { "keyCode": "86", "keyDescrpition": "V" },
+  { "keyCode": "87", "keyDescrpition": "W" },
+  { "keyCode": "88", "keyDescrpition": "X" },
+  { "keyCode": "89", "keyDescrpition": "Y" },
+  { "keyCode": "90", "keyDescrpition": "Z" },
+  {
+    "keyCode": "91",
+    "keyDescrpition": "Left Window/Meta/OS Key"
+  },
+  {
+    "keyCode": "92",
+    "keyDescrpition": "Right Window/Meta/OS Key"
+  },
+  { "keyCode": "93", "keyDescrpition": "Context Menu" },
+  { "keyCode": "96", "keyDescrpition": "Numpad 0" },
+  { "keyCode": "97", "keyDescrpition": "Numpad 1" },
+  { "keyCode": "98", "keyDescrpition": "Numpad 2" },
+  { "keyCode": "99", "keyDescrpition": "Numpad 3" },
+  { "keyCode": "100", "keyDescrpition": "Numpad 4" },
+  { "keyCode": "101", "keyDescrpition": "Numpad 5" },
+  { "keyCode": "102", "keyDescrpition": "Numpad 6" },
+  { "keyCode": "103", "keyDescrpition": "Numpad 7" },
+  { "keyCode": "104", "keyDescrpition": "Numpad 8" },
+  { "keyCode": "105", "keyDescrpition": "Numpad 9" },
+  { "keyCode": "106", "keyDescrpition": "Multiply" },
+  { "keyCode": "107", "keyDescrpition": "Add" },
+  {
+    "keyCode": "108",
+    "keyDescrpition": "Keypad Enter"
+  },
+  { "keyCode": "109", "keyDescrpition": "Subtract" },
+  {
+    "keyCode": "110",
+    "keyDescrpition": "Decimal Point"
+  },
+  { "keyCode": "111", "keyDescrpition": "Divide" },
+  { "keyCode": "112", "keyDescrpition": "F1" },
+  { "keyCode": "113", "keyDescrpition": "F2" },
+  { "keyCode": "114", "keyDescrpition": "F3" },
+  { "keyCode": "115", "keyDescrpition": "F4" },
+  { "keyCode": "116", "keyDescrpition": "F5" },
+  { "keyCode": "117", "keyDescrpition": "F6" },
+  { "keyCode": "118", "keyDescrpition": "F7" },
+  { "keyCode": "119", "keyDescrpition": "F8" },
+  { "keyCode": "120", "keyDescrpition": "F9" },
+  { "keyCode": "121", "keyDescrpition": "F10" },
+  { "keyCode": "122", "keyDescrpition": "F11" },
+  { "keyCode": "123", "keyDescrpition": "F12" },
+  { "keyCode": "124", "keyDescrpition": "F13" },
+  { "keyCode": "125", "keyDescrpition": "F14" },
+  { "keyCode": "126", "keyDescrpition": "F15" },
+  { "keyCode": "127", "keyDescrpition": "F16" },
+  { "keyCode": "128", "keyDescrpition": "F17" },
+  { "keyCode": "129", "keyDescrpition": "F18" },
+  { "keyCode": "130", "keyDescrpition": "F19" },
+  { "keyCode": "131", "keyDescrpition": "F20" },
+  { "keyCode": "132", "keyDescrpition": "F21" },
+  { "keyCode": "133", "keyDescrpition": "F22" },
+  { "keyCode": "134", "keyDescrpition": "F23" },
+  { "keyCode": "135", "keyDescrpition": "F24" },
+  { "keyCode": "136", "keyDescrpition": "F25" },
+  { "keyCode": "137", "keyDescrpition": "F26" },
+  { "keyCode": "138", "keyDescrpition": "F27" },
+  { "keyCode": "139", "keyDescrpition": "F28" },
+  { "keyCode": "140", "keyDescrpition": "F29" },
+  { "keyCode": "141", "keyDescrpition": "F30" },
+  { "keyCode": "142", "keyDescrpition": "F31" },
+  { "keyCode": "143", "keyDescrpition": "F32" },
+  { "keyCode": "144", "keyDescrpition": "Num Lock" },
+  { "keyCode": "145", "keyDescrpition": "Scroll Lock" },
+  {
+    "keyCode": "166",
+    "keyDescrpition": "Navigate/Page Back"
+  },
+  {
+    "keyCode": "167",
+    "keyDescrpition": "Navigate/Page Forward"
+  },
+  {
+    "keyCode": "168",
+    "keyDescrpition": "Reload/Refresh Page"
+  },
+  {
+    "keyCode": "174",
+    "keyDescrpition": "Audio Volume Down"
+  },
+  {
+    "keyCode": "175",
+    "keyDescrpition": "Audio Volume Up"
+  },
+  { "keyCode": "186", "keyDescrpition": "Semi-colon" },
+  { "keyCode": "187", "keyDescrpition": "Equal Sign" },
+  { "keyCode": "188", "keyDescrpition": "Comma" },
+  { "keyCode": "189", "keyDescrpition": "Dash" },
+  { "keyCode": "190", "keyDescrpition": "Period" },
+  {
+    "keyCode": "191",
+    "keyDescrpition": "Forward Slash"
+  },
+  {
+    "keyCode": "192",
+    "keyDescrpition": "Grave Accent"
+  },
+  {
+    "keyCode": "219",
+    "keyDescrpition": "Open Bracket"
+  },
+  { "keyCode": "220", "keyDescrpition": "Back Slash" },
+  {
+    "keyCode": "221",
+    "keyDescrpition": "Close Bracket"
+  },
+  {
+    "keyCode": "222",
+    "keyDescrpition": "Single Quote"
+  }
+]

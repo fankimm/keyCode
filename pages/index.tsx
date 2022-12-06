@@ -1,52 +1,230 @@
-import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import React, { SyntheticEvent, useEffect, useState } from "react";
+import FloatingAlrert from "../components/floating-alrert";
 import styles from "../styles/Home.module.css";
+import keyTable from "./keyTable.json";
 interface ICurrentKey {
   key: string;
   code: string;
   which: number;
   keyCode: number;
 }
+interface IKeyInfo {
+  title: string;
+  keyIndex: "key" | "code" | "which" | "keyCode";
+}
+interface IButton {
+  title: IBindKeys;
+  icon: string;
+  isPressed: boolean;
+}
+type IBindKeys = "Meta" | "Alt" | "Ctrl" | "Shift" | "Key";
 const Home = () => {
+  const router = useRouter();
+  const [currentPage, setCurrentPage] = useState("inspector");
   const [currentKey, setCurrentKey] = useState<ICurrentKey | undefined>(
     undefined
   );
-  const handleKeyDown = (e) => {
-    console.log(e);
+  const [visible, setVisible] = useState(false);
+  const [buttonDedicatorObj, setButtonDedicatorObj] = useState<IButton[]>([
+    {
+      title: "Shift",
+      icon: "⇧",
+      isPressed: false,
+    },
+    {
+      title: "Ctrl",
+      icon: "⌃",
+      isPressed: false,
+    },
+    {
+      title: "Meta",
+      icon: "⌘",
+      isPressed: false,
+    },
+    {
+      title: "Alt",
+      icon: "⌥",
+      isPressed: false,
+    },
+    {
+      title: "Key",
+      icon: "",
+      isPressed: false,
+    },
+  ]);
+  const handleOnClick = (item: IKeyInfo) => {
+    if (!visible) {
+      setVisible(true);
+      currentKey &&
+        currentKey[item.keyIndex] &&
+        window.navigator.clipboard.writeText(
+          currentKey?.[item.keyIndex].toString()
+        );
+      setTimeout(() => {
+        setVisible(false);
+      }, 2000);
+    }
+  };
+  const bindKeyFunc = (key) => {
+    if (key === "Control") {
+      key = "Ctrl";
+    }
+    if (key) {
+      const tempSelect: IButton = {
+        ...buttonDedicatorObj.find((item) => item.title === key),
+        isPressed: true,
+      };
+      const prev = buttonDedicatorObj.map((item) => {
+        if (item.title === key) {
+          return tempSelect;
+        }
+        return { ...item, isPressed: false };
+      });
+      setButtonDedicatorObj(prev);
+    }
+  };
+  const handleOnKeyDown = (e: KeyboardEvent) => {
+    bindKeyFunc(e.key);
     const { key, code, which, keyCode } = e;
     setCurrentKey({ key, code, which, keyCode });
   };
   useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("keydown", handleOnKeyDown);
     return () => {
-      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("keydown", handleOnKeyDown);
     };
   }, []);
 
+  const keyInfo: IKeyInfo[] = [
+    { title: "e.key", keyIndex: "key" },
+    { title: "e.code", keyIndex: "code" },
+    { title: "e.which", keyIndex: "which" },
+    { title: "e.keyCode", keyIndex: "keyCode" },
+  ];
   return (
     <div className={styles.mainContainer}>
-      <div className="headerContainer">
-        <h5>Key.js</h5>
-        <button>Keycodes Tables</button>
+      {visible ? <FloatingAlrert /> : <></>}
+
+      <div className={styles.headerContainer}>
+        <h1
+          className={styles.logo}
+          onClick={() => {
+            setCurrentPage("inspector");
+          }}
+        >
+          ⌨️ Key.js
+        </h1>
+        <button
+          className={styles.tableButton}
+          onClick={() => {
+            if (currentPage === "inspector") {
+              setCurrentPage("table");
+            } else {
+              setCurrentPage("inspector");
+            }
+          }}
+        >
+          {currentPage === "inspector" ? "Keycodes Tables" : "Key Inspector"}
+        </button>
       </div>
-      <div className="bodyContainer">
-        <p>
-          Press any key to get the JavaScript keydown event key, code, which and
-          keyCode properties:
-        </p>
-        <input placeholder="Press any key to start..."></input>
-        <div className={styles.buttonContainer}>
-          <div className={styles.buttonWrapper}>Shift</div>
-          <div className={styles.buttonWrapper}>Ctrl</div>
-          <div className={styles.buttonWrapper}>Meta L</div>
-          <div className={styles.buttonWrapper}>Alt</div>
-          <div className={styles.buttonWrapper}>Key {currentKey?.key}</div>
-        </div>
-        <div className="showKeyInfoContainer">
-          <div>e.key : {currentKey?.key}</div>
-          <div>e.code : {currentKey?.code}</div>
-          <div>e.which : {currentKey?.which}</div>
-          <div>e.keyCode : {currentKey?.keyCode}</div>
-        </div>
+
+      <div className={styles.bodyContainer}>
+        {currentPage === "inspector" ? (
+          <>
+            <p style={{ fontSize: "12px" }}>
+              Press any key to get the JavaScript keydown event key, code, which
+              and keyCode properties:
+            </p>
+            <input
+              className={styles.input}
+              placeholder="Press any key to start..."
+            ></input>
+            <div style={{ marginBottom: "10px" }}></div>
+            <div className={styles.buttonContainer}>
+              {buttonDedicatorObj.map((item) => {
+                return (
+                  <div
+                    className={styles.buttonWrapper}
+                    key={item.title}
+                    style={
+                      item.isPressed
+                        ? {
+                            background: "#4096ff",
+                            color: "white",
+                          }
+                        : {}
+                    }
+                  >
+                    {item.icon ? (
+                      <div>{item.icon}</div>
+                    ) : (
+                      <>
+                        <div></div>
+                        <div>{currentKey?.key}</div>
+                      </>
+                    )}
+                    <div style={{ fontSize: "12px" }}>{item.title}</div>
+                  </div>
+                );
+              })}
+            </div>
+            <div style={{ marginBottom: "30px" }}></div>
+            <div className={styles.buttonContainer}>
+              {keyInfo.map((item: IKeyInfo) => {
+                return (
+                  <div
+                    className={styles.buttonWrapper2}
+                    key={item.title}
+                    onClick={() => handleOnClick(item)}
+                  >
+                    <div style={{ fontSize: "12px" }}>{item.title}</div>
+                    <div style={{ fontSize: "14px", marginTop: "10px" }}>
+                      {currentKey?.[item.keyIndex]}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <div style={{ marginBottom: "50px" }}></div>
+            <div style={{ fontSize: "12px", marginBottom: "100px" }}>
+              Click a value to copy.
+            </div>
+          </>
+        ) : (
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <table className={styles.table}>
+              <thead>
+                <tr>
+                  <td>Key Code</td>
+                  <td>Key Description</td>
+                </tr>
+              </thead>
+              <tbody>
+                {keyTable.map((item, idx) => {
+                  const key = `${item}_${idx}`;
+                  return (
+                    <tr key={key}>
+                      <td className={styles.td}>{item.keyCode}</td>
+                      <td className={styles.td}>{item.keyDescrpition}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
+      <div className={styles.footerContainer}>
+        <span className={styles.footerCopy}>
+          Copyright © 2022 Jihwan Kim. All rights reserved.
+        </span>
+        <a className={styles.a} href="mailto:fankim@icloud.com">
+          <span>✉️</span>fankim@icloud.com
+        </a>
+        <a className={styles.a} href="https://github.com/fankimm">
+          Github
+        </a>
       </div>
     </div>
   );

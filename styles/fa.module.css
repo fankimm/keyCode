@@ -1,0 +1,32 @@
+.floatingContainer {
+  display: flex;
+  align-content: center;
+  --width: 90px;
+  text-align: center;
+  width: var(--width);
+  background: white;
+  padding: 6px;
+  border-radius: 12px;
+  position: fixed;
+  left: calc(50vw - calc(var(--width) / 2));
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  animation: slidein 2s;
+  animation-timing-function: ease;
+  animation-direction: alternate;
+  top: -50px;
+}
+
+@keyframes slidein {
+  0% {
+    top: -50px;
+  }
+  30% {
+    top: 20px;
+  }
+  70% {
+    top: 20px;
+  }
+  100% {
+    top: -50px;
+  }
+}
