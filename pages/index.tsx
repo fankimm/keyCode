@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React, { SyntheticEvent, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import FloatingAlrert from "../components/floating-alrert";
 import styles from "../styles/Home.module.css";
 import keyTable from "./keyTable.json";
@@ -66,35 +66,37 @@ const Home = () => {
       }, 2000);
     }
   };
-  const bindKeyFunc = (key) => {
-    if (key === "Control") {
-      key = "Ctrl";
-    }
-    if (key) {
-      const tempSelect: IButton = {
-        ...buttonDedicatorObj.find((item) => item.title === key),
-        isPressed: true,
-      };
-      const prev = buttonDedicatorObj.map((item) => {
-        if (item.title === key) {
-          return tempSelect;
-        }
-        return { ...item, isPressed: false };
-      });
-      setButtonDedicatorObj(prev);
-    }
-  };
-  const handleOnKeyDown = (e: KeyboardEvent) => {
-    bindKeyFunc(e.key);
-    const { key, code, which, keyCode } = e;
-    setCurrentKey({ key, code, which, keyCode });
-  };
+  const bindKeyFunc = useCallback(
+    (key: React.KeyboardEvent["key"]) => {
+      if (key === "Control") {
+        key = "Ctrl";
+      }
+      if (key) {
+        const tempData = buttonDedicatorObj.map((item) => {
+          if (item.title === key) {
+            return { ...item, isPressed: true };
+          }
+          return { ...item, isPressed: false };
+        });
+        setButtonDedicatorObj(tempData);
+      }
+    },
+    [buttonDedicatorObj]
+  );
+  const handleOnKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      bindKeyFunc(e.key);
+      const { key, code, which, keyCode } = e;
+      setCurrentKey({ key, code, which, keyCode });
+    },
+    [bindKeyFunc]
+  );
   useEffect(() => {
     window.addEventListener("keydown", handleOnKeyDown);
     return () => {
       window.removeEventListener("keydown", handleOnKeyDown);
     };
-  }, []);
+  }, [currentPage, handleOnKeyDown]);
 
   const keyInfo: IKeyInfo[] = [
     { title: "e.key", keyIndex: "key" },
