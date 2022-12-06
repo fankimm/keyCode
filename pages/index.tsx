@@ -189,7 +189,7 @@ const Home = () => {
               })}
             </div>
             <div style={{ marginBottom: "50px" }}></div>
-            <div style={{ fontSize: "12px", marginBottom: "100px" }}>
+            <div style={{ fontSize: "12px", marginBottom: "20px" }}>
               Click a value to copy.
             </div>
             <div>
@@ -198,6 +198,7 @@ const Home = () => {
                 https://keyjs.dev/
               </a>
             </div>
+<div style={{margin:'100px'}}></div>
           </>
         ) : (
           <div style={{ display: "flex", justifyContent: "center" }}>
