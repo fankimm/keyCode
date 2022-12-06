@@ -7,7 +7,6 @@
   justify-content: space-between;
   width: 600px;
   margin: auto;
-  color: #595959;
   /* scrollbar-width: none;
   -ms-overflow-style: none; */
 }
@@ -27,6 +26,16 @@
   display: flex;
   margin: auto;
 }
+/* @media (prefers-color-scheme: dark) {
+  .buttonWrapper {
+    color: white;
+    background: #262626;
+  }
+  .buttonWrapper2 {
+    color: white;
+    background: #262626;
+  }
+} */
 @media (max-width: 720px) {
   .footerCopy {
     margin-bottom: 10px;
