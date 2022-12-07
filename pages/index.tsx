@@ -192,7 +192,7 @@ const Home = () => {
             <div style={{ fontSize: "12px", marginBottom: "20px" }}>
               Click a value to copy.
             </div>
-            <div>
+            <div style={{ fontSize: "12px" }}>
               Inspired by{" "}
               <a className={styles.a} href="https://keyjs.dev/">
                 https://keyjs.dev/
