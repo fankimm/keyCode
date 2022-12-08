@@ -53,9 +53,6 @@ const Home = () => {
       isPressed: false,
     },
   ]);
-  useEffect(() => {
-    fetch("/api/hello");
-  }, []);
   const handleOnClick = (item: IKeyInfo) => {
     if (!visible) {
       setVisible(true);
@@ -201,7 +198,7 @@ const Home = () => {
                 https://keyjs.dev/
               </a>
             </div>
-            <div style={{ margin: "100px" }}></div>
+<div style={{margin:'100px'}}></div>
           </>
         ) : (
           <div style={{ display: "flex", justifyContent: "center" }}>
